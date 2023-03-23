@@ -1,5 +1,20 @@
+"""
+归并排序
+分治法
+
+
+"""
+
+
 def merge(S1,S2,S):
-    """合并两个子列表，并排序"""
+    """
+    合并两个已排序的子列表S1,S2，并排序。
+    并将输出复制到S.
+    我们在每次进入while循环时复制一个元素，
+    有条件地决定下一个元素将会取自S1或S2中的哪一个。
+
+
+    """
     # TODO 分析排序过程
     i = j = 0
     while i+j < len(S):
@@ -20,9 +35,9 @@ def merge_sort(S):
     mid = n//2
     S1 = S[0:mid]
     S2 = S[mid:n]
-    merge_sort(S1)
-    merge_sort(S2)
-    merge(S1,S2,S)
+    merge_sort(S1)  # 递归调用merge_sort()
+    merge_sort(S2)  # 递归调用merge_sort()
+    merge(S1,S2,S)  # 递归调用merge()
 
 
 def merge_sort2(arr):
@@ -41,9 +56,11 @@ def merge_sort2(arr):
     result = []
     i, j = 0, 0
     while i < len(left_arr) and j < len(right_arr):
+        # 谁小先排谁
         if left_arr[i] <= right_arr[j]:
             result.append(left_arr[i])
             i += 1
+        # 逐次对比
         else:
             result.append(right_arr[j])
             j += 1
