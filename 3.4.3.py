@@ -1,10 +1,16 @@
+"""
+归纳和循环不变量
+"""
+
+
 def find(S,val):
-    n = len(S)
+    """寻找给定元素在列表中第一个出现的索引值"""
+    n = len(S)  # O(n)
     j = 0
-    while j < n:
-        if S[j] == val:
+    while j < n:  # n 次
+        if S[j] == val:  # O(1)
             return j
         j += 1
-    return -1
+    return -1  # O(1)
 
             

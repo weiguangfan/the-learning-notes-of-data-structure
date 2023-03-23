@@ -14,9 +14,10 @@ def unique1(S):
 
 
 def unique2(S):
-    temp = sorted(S)
-    for j in range(1,len(temp)):
-        if temp[j-1] == temp[j]:
+    """运行时间O(nlog n)"""
+    temp = sorted(S)  # sorted(),O(nlog n)
+    for j in range(1,len(temp)):  # 外层，n-1次
+        if temp[j-1] == temp[j]:  # O(1),
             return False
     return True
 

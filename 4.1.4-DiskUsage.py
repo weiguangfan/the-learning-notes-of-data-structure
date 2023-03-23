@@ -12,7 +12,9 @@ import os
 
 
 def disk_usage(path):
-    """计算磁盘空间使用情况"""
+    """
+    计算磁盘空间使用情况的递归函数
+    """
     total = os.path.getsize(path)
     if os.path.isdir(path):
         for filename in os.listdir(path):
