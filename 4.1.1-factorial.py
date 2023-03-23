@@ -8,8 +8,14 @@
 
 
 def factorial(n):
-    """阶乘函数的递归实现"""
+    """
+    阶乘函数的递归实现
+    n+1次函数调用，n,n-1,...,0
+    每次调用占得操作次数为 O(1)
+    操作总次数O(n)
+    """
     if n == 0:
         return 1
     else:
+        # 常数级别的计算
         return n * factorial(n-1)

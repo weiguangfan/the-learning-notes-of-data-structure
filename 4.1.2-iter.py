@@ -27,7 +27,14 @@ def draw_line(tick_length,tick_label=''):
 def draw_interval(center_length):
     """
     根据刻度间隔中中央刻度线的长度来绘制刻度间隔之间副刻度线的序列。
+    考虑共有多少行输出；
+    输出的每一行是基于一个对draw_line函数的调用，
+    以及对draw_interval的每次非零参数递归调用恰好产生的一个对draw_line的直接调用；
+    对于c>=0,调用draw_interval(c)函数刚好产生2**c - 1行输出；
 
+    通过调用draw_interval(c)函数打印的行数,
+    比通过调用draw_interval(c-1)函数产生的行数的两倍还多1，
+    因为在两个这样的递归调用之间打印一个中心线。
 
     间隔线，画三条线，长度分别是L-1,L,L-1
     """

@@ -1,3 +1,4 @@
+"""递归算法的不足"""
 def uinique3(S,start,stop):
     if stop - start <= 1:
         return True
