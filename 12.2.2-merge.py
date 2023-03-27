@@ -12,7 +12,9 @@ def merge(S1,S2,S):
     并将输出复制到S.
     我们在每次进入while循环时复制一个元素，
     有条件地决定下一个元素将会取自S1或S2中的哪一个。
-
+    i表示S1中已经被复制到S中的元素个数
+    j表示S2中已经被复制到S中的元素个数
+    如果达到了某一个序列的最后，就必须从另一个序列开始复制下一个元素
 
     """
     # TODO 分析排序过程
@@ -24,7 +26,7 @@ def merge(S1,S2,S):
         else:
             S[i+j] = S2[j]
             j += 1
-
+    return S
 
 def merge_sort(S):
     """切分，直到元素个数为1"""
@@ -69,3 +71,7 @@ def merge_sort2(arr):
     result += right_arr[j:]
 
     return result
+
+
+list1 = [1,4,5,9,2,3,7]
+print(merge_sort(list1))

@@ -14,6 +14,11 @@ import os
 def disk_usage(path):
     """
     计算磁盘空间使用情况的递归函数
+    分析所执行的递归调用的总数
+    这些调用中执行的操作次数
+    有O(n)个递归调用，
+    并且每个调用运行的时间是O(n),
+    从而导致总的运行时间为O(n**2)
     """
     total = os.path.getsize(path)
     if os.path.isdir(path):
